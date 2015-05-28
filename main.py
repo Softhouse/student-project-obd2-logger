@@ -126,12 +126,12 @@ while 1:
                     #Insert error-codes
 
                     # Start by setting all errors to inactive with procedure WipeError
-                    if len(formattedData['Errors']) > 0:
-                        sql = "CALL WipeError('%s')" % (UID)
+                    sql = "CALL WipeError('%s')" % (UID)
                     
-                        print "Sending..."
-                        connection.send(sql)
-                        connection.recieve()
+                    print "Sending..."
+                    connection.send(sql)
+                    connection.recieve()
+                    if len(formattedData['Errors']) > 0:
 
                         # Now insert each error with a procedure
                         for error in formattedData['Errors']:
